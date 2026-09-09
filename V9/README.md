@@ -22,13 +22,18 @@ The aforementioned task was to go through videos second-by-second and record the
 4. **Validate** — after every frame in the video has been read, run a post-pass of checks over the full set of readings: a format check, an optional physical-range check, a temporal-outlier check, and (optionally) a second, *different* vision-language model that independently re-reads every frame and flags disagreements. All of these only **flag** — none of them ever change a value.
 5. **Export** — write one Excel workbook per video, with every reading, every check's result, and the reason for each flag. Frames whose readings were flagged are also copied out separately so you can jump straight to them.
 
+## Feature Overview
+
+1. **Modularity** — Each stage of processing is standalone and can make code modifications simpler, or make it easier to swap out a module
+2. **Any Model You Want** — Even though I tested the software with the models listed in the next section, you can technically use any model you want by modifying the input fields (though it'll default to the two I used). 
+
 ## Requirements
 
 - **Windows**, Python 3.10+ (developed and tested on Python 3.13).
 - **[LM Studio](https://lmstudio.ai/)**, running locally with:
   - a vision-language reader model — developed against `qwen/qwen3-vl-4b` (Q4_K_M GGUF)
   - (optional) a *different* vision-language model to use as the independent judge — developed against `minicpm-v-4_5`. It must not be the same model as the reader, or it will share the reader's blind spots instead of catching them.
-- A GPU capable of running a ~4B-parameter vision-language model at a usable speed is strongly recommended (I have a computer with an RTX 5070 Ti Laptop GPU, 12 GB VRAM). Any hardware compatible with LM Studio technically works, but it's just a question of how fast you want results.
+- A GPU capable of running a ~4B-parameter vision-language model at a usable speed is strongly recommended (I have a computer with an RTX 5070 Ti 12GB Laptop GPU, so I usually preload both models before a run). Any hardware compatible with LM Studio technically works, but it's just a question of how fast you want results.
 - My Setup: I used a 2025 ROG Zephyrus G16 running Windows 11 with the U9-285H, 32GB RAM, and an RTX5070Ti 12GB Laptop GPU
 
 ## Installation
