@@ -6,13 +6,13 @@ It was built to read a thermometer display during tensile tests, but nothing abo
 
 > This folder is one version inside a repo that collects several independent builds of this tool. See the [repo root](../README.md) for the full list of versions. V9 is a clean, standalone rebuild — it does not share code with earlier versions.
 
-## Why it exists
-
-Reading hundreds of thermometer frames from lab video by hand is slow and error-prone. This pipeline automates the reading with a vision-language model, with safeguards and debugging tools that make it easy enough to manually read the frame the data point was derived from. Anything that looks wrong is **flagged for the user to check**, never corrected, smoothed, or dropped. Accuracy and trustworthy output take priority over speed — this is an offline batch tool, not a real-time one.
-
 ## AI Use Acknowledgement
 
 I am not a programmer, I am a mechanical engineering student. I do not know python and this was entirely developed with Claude Code. Even though I designed the structure, vetted the plan files, and stayed involved during development, there may still be glitches that exist simply as a byproduct of AI-based programming. I had specific tasks that I needed to complete in the lab I work in and realized that there is an easier/better way to complete it, which it absolutely did by all means. The READMEs are also mostly AI generating, with my oversight, only because I didn't want to spend time on something that isn't really my professional focus, but still wanted to share what I had worked on.
+
+## Why it exists
+
+The aforementioned task was to go through videos second-by-second and record the data points in a spreadsheet; absolutely boring, tedious, and somewhat inaccurate. This pipeline automates the reading with a vision-language model, with safeguards and debugging tools that make it easy enough to manually read the frame the data point was derived from. Anything that looks wrong is **flagged for the user to check**, never corrected, smoothed, or dropped. I intentionally made sure to design such tools in, as minimal as they might be. The lab work required both accuracy and privacy, I didn't really care that some of the added steps reduced the speed, even though it was rather marginal.
 
 ## How it works
 
@@ -29,6 +29,7 @@ I am not a programmer, I am a mechanical engineering student. I do not know pyth
   - a vision-language reader model — developed against `qwen/qwen3-vl-4b` (Q4_K_M GGUF)
   - (optional) a *different* vision-language model to use as the independent judge — developed against `minicpm-v-4_5`. It must not be the same model as the reader, or it will share the reader's blind spots instead of catching them.
 - A GPU capable of running a ~4B-parameter vision-language model at a usable speed is strongly recommended (I have a computer with an RTX 5070 Ti Laptop GPU, 12 GB VRAM). Any hardware compatible with LM Studio technically works, but it's just a question of how fast you want results.
+- My Setup: I used a 2025 ROG Zephyrus G16 running Windows 11 with the U9-285H, 32GB RAM, and an RTX5070Ti 12GB Laptop GPU
 
 ## Installation
 
