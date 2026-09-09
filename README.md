@@ -6,7 +6,7 @@ I've used this to get readings from a standard LCD display, like one from a FLIR
 
 ## AI Use Acknowledgement
 
-I am not a programmer, I am a mechanical engineering student. I do not know python and this was entirely developed with Claude Code. Even though I designed the structure, vetted the plan files, and stayed involved during development, there may still be glitches that exist simply as a byproduct of AI-based programming. I had specific tasks that I needed to complete in the lab I work in and realized that there is an easier/better way to complete it, which it absolutely did by all means. The READMEs are also mostly AI generating, with my oversight, only because I didn't want to spend time on something that isn't really my professional focus, but still wanted to share what I had worked on.
+I am not a programmer, I am a mechanical engineering student. I do not know python at this level and this was developed with Claude Code. Even though I designed the structure, vetted the plan files, and stayed involved during development, there may still be glitches that exist simply as a byproduct of AI-based programming. I had specific tasks that I needed to complete in the lab I work in and realized that there is an easier/better way to complete it, which it absolutely did by all means. The READMEs are also mostly AI generating, with my oversight, only because I didn't want to spend time on something that isn't really my professional focus, but still wanted to share what I had worked on.
 
 ## Why it exists
 
